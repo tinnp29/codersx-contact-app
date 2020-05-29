@@ -119,12 +119,10 @@ function updateContact() {
 
       var removedContact = contactsObj.splice(i, 1, newContact); // 3
       
-      writeFileSync(db, JSON.stringify(contactsObj)); // 4
+      fs.writeFileSync(db, JSON.stringify(contactsObj)); // 4
 
-    } else {
-      console.log('\n \t' + chalk.hex('#fc2605').bold('Ops!, có vẻ bạn nhập không chính xác, thử lại nhé bạn yêu. \n'));
-      menu();
-    }
+    } 
+
   }
 
   console.log('\n');
@@ -148,9 +146,6 @@ function removeContact() {
     if(parseInt(optionContact) === i + 1) {
       contactsObj.splice(i, 1); // 2
       fs.writeFileSync(db, JSON.stringify(contactsObj)); // 3
-    } else {
-      console.log('\n \t' + chalk.hex('#fc2605').bold('Ops!, có vẻ bạn nhập không chính xác, thử lại nhé bạn yêu. \n'));
-      menu();
     }
   }
 
