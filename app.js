@@ -152,7 +152,6 @@ function removeContact() {
   console.log('\n');
   showContact();
 }
-
 /*
     - search Contact
     -> 1. use filter() method to interact contactsObj, create an array contains contacts that equals key user entered from data.
